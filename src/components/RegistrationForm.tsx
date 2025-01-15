@@ -1,6 +1,7 @@
-import { useState, FormEvent } from "react";
+import { useState, FormEvent, useMemo } from "react";
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
+import { fetchData } from '../utils/fetch';
 
 export interface User {
   name: string,
@@ -11,9 +12,39 @@ export interface User {
   location: string
 }
 
+export interface Track {
+  id: number,
+  title: string,
+  description: string
+}
+
+export interface Cohort {
+  id: number,
+  title: string,
+  startDate: string
+}
+
 export default function RegistrationForm(){
   const [data, setData] = useState<User>({} as User);
   const [errors, setErrors] = useState<User>({} as User);
+  const [tracks, setTracks] = useState<Track[]>([]);
+  const [cohorts, setCohorts] = useState<Cohort[]>([]);
+
+  useMemo(async () => {
+    const res = await fetchData('/tracks');
+    console.log(res)
+
+    setTracks(res.data.track)
+  }, [])
+
+  useMemo(async () => {
+    const res = await fetchData('/cohorts')
+    console.log(res)
+
+    if(res.data){
+      setCohorts(res.data.cohort);
+    }
+  }, [])
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -33,12 +64,17 @@ export default function RegistrationForm(){
           <label htmlFor="track">Track you are applying for: </label>
           <select value={data.track} name="track" onChange={(e) => setData({ ...data, track: +e.target.value })} id="track" className="border-2 border-slate-200 rounded-md p-2 bg-transparent">
             <option value="">-- Please select --</option>
+            {
+              tracks.map(track => (
+                <option value={track.id} key={track.id}>{track.title}</option>
+              ))
+            }
           </select>
           <p className="text-red-600 font-bold">{errors.name}</p>
         </div>
       </div>
       <div className="flex flex-col lg:flex-row gap-4 items-center">
-        <div className="w-full flex flex-col gap-2">
+        <div className="w-full lg:w-1/2 flex flex-col gap-2">
           <label htmlFor="email">Email: </label>
           <input type="email" name="email" id="email" value={data.email} onChange={(e) => setData({ ...data, email: e.target.value })} className="border-2 border-slate-200 rounded-md p-2" placeholder="you@email.com" />
           <p className="text-red-600 font-bold">{errors.name}</p>
@@ -64,6 +100,14 @@ export default function RegistrationForm(){
           <label htmlFor="cohort">Cohort</label>
           <select value={data.cohort} name="cohort" onChange={(e) => setData({ ...data, cohort: +e.target.value })} id="cohort" className="border-2 border-slate-200 rounded-md p-2 bg-transparent">
             <option value="">-- Please select --</option>
+            {
+              cohorts.map(cohort => {
+                const date = new Date(cohort.startDate)
+                return(
+                <option value={cohort.id} key={cohort.id}>{cohort.title} - {date.toDateString()}</option>
+              )
+              })
+            }
           </select>
           <p className="text-red-600 font-bold">{errors.name}</p>
         </div>
