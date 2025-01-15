@@ -54,3 +54,38 @@ body {
   }
 }
 
+.purpleGradient {
+  background: linear-gradient(45deg, #440476 43%, #7f07dc 64%);
+}
+
+.slider {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.slider > * {
+    min-width: 100%;
+    transition: opacity 1s ease-in-out;
+}
+
+@keyframes slideAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(-100%);
+    }
+    75% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
+}
+
+.slider {
+    animation: slideAnimation 9s infinite;
+}
