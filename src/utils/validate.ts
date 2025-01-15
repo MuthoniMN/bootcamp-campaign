@@ -1,7 +1,6 @@
-import { Errors } from "../types/";
+import { Errors, User } from "../types/";
 
-export const validateObject = (obj) => {
-  console.log(obj)
+export const validateObject = (obj: User) => {
   const errors = {} as Errors;
   if(!Object.prototype.hasOwnProperty.call(obj, 'name')){
       errors['name'] = "Your name is required!"  
