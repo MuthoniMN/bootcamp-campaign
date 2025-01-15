@@ -66,9 +66,22 @@ button:focus-visible {
   background-repeat: no-repeat;
 }
 
-@media (max-width: 940px){
+@media (max-width: 1300px){
   .authContainer {
-    background-position: center center;
+    background-position: left 150% center;
+  }
+}
+
+@media (max-width: 1080px){
+  .authContainer {
+    background-position: left 90% center;
+    background-size: cover;
+    height: fit-content;
+  }
+}
+
+@media (max-width: 920px){
+  .authContainer {
     background-size: cover;
   }
 }
