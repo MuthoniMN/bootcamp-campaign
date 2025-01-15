@@ -42,22 +42,15 @@ export default function RegistrationForm(){
         },
         body: JSON.stringify(data)
       })
-      console.log(response);
-
-      if(!response.ok){
+      const resData = await response.json();
+      if(resData.status !== 201){
         setErrors({ ...(errors as Errors), registration: "Failed to register for bootcamp. Please try again" });
-
         return;
       }
-
-      const resData = await response.json();
       const cohort = cohorts.filter(cohort => cohort.id === data.cohort)[0];
 
-      if(resData.data){
-        console.log(resData);
-        setSuccess(`Successfully registered for the ${cohort.title}. Please check your email for further instructions`);
-        return;
-      }
+      setSuccess(`Successfully registered for the ${cohort.title}. Please check your email for further instructions`);
+      return;
     }
 
     console.log(errors);
