@@ -2,7 +2,7 @@ import { LuMessageCircle } from "react-icons/lu";
 
 export default function HeroSection(){
   return (
-    <section className="flex flex-col md:flex-row items-center w-full h-[80vh] px-8 py-4">
+    <section className="flex flex-col gap-12 md:gap-0 md:flex-row items-center w-full md:h-[80vh] px-8 py-4">
       <div className="w-full md:w-1/2 h-full flex flex-col gap-6 justify-center">
         <h1 className="text-3xl font-bold md:text-[48px]">Launch Your Tech Career<span className="block mt-[18px] text-[#440770]">with Real-World Experience</span></h1>
         <p className="max-w-[450px]">Join our intensive internship bootcamp and gain hands-on experience with top Tech Professonals, setting you up for success in your career.</p>
