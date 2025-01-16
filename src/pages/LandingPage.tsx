@@ -6,6 +6,7 @@ import Tracks from "../components/Tracks";
 import Benefits from "../components/Benefits";
 import Testimonials from "../components/Testimonials";
 import FAQ from "../components/FAQ";
+import Footer from "../components/Footer";
 
 export default function LandingPage(){
   return (
@@ -18,6 +19,7 @@ export default function LandingPage(){
       <Benefits />
       <Testimonials />
       <FAQ />
+      <Footer />
     </main>
   )
 }

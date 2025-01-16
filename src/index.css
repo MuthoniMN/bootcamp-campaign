@@ -96,3 +96,7 @@ body {
   background-position: center center;
   min-height: 500px;
 }
+
+.angularGradient{
+  background: conic-gradient(#410372 16%, #440378 38%, #7b06d8 100%);
+}
