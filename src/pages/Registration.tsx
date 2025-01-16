@@ -1,5 +1,4 @@
 import RegistrationForm from "../components/RegistrationForm";
-import { NavLink } from "react-router";
 
 export default function Registration(){
   return (
@@ -9,7 +8,7 @@ export default function Registration(){
         <div className="w-[70px] h-[4px] bg-[#330066]"></div>
       </div>
       <RegistrationForm />
-      <NavLink to="/" className="text-xl mt-6 text-[#3300066] underline hover:font-bold cursor-pointer"></NavLink>
+
     </section>
   )
 }

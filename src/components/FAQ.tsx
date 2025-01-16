@@ -35,9 +35,9 @@ export default function FAQ(){
       <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
       <div className="space-y-4 w-full max-w-[720px] px-4 mt-8 text-left">
         { data.map((d, id) => (
-          <div className={`bg-[#00000003] border-2 border-slate-100 rounded-md px-4 py-2 shadow-md space-y-4`} onClick={() => handleClick(id)}>
-            <h3 className="flex gap-2 items-center">{id === open ? <FaMinus /> : <FaPlus />}{d.question}</h3>
-            <p className={`${id === open ? 'block' : 'hidden'}`} >{d.answer}</p>
+          <div className={`bg-[#00000003] border-2 border-slate-100 rounded-md px-4 py-2 shadow-md ${id === open && 'space-y-4'}`} onClick={() => handleClick(id)}>
+            <h3 className="flex gap-2 items-center">{id === open ? <FaMinus className="text-xl" /> : <FaPlus className="text-xl" />}{d.question}</h3>
+            <p className={`overflow-hidden transition-[height] duration-500 ease-in-out ${id === open ? 'h-auto' : 'h-0'}`} >{d.answer}</p>
           </div>
         ))}
       </div>

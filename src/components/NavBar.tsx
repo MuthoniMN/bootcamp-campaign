@@ -17,7 +17,7 @@ export default function Navbar(){
         </button>
 
       <nav className="w-full">
-        <ul className={`${open ? 'block space-y-4' : 'flex'} gap-4 w-full justify-center`}>
+        <ul className={`${open ? 'block space-y-4' : 'flex'} gap-4 w-full justify-between px-6 h-full items-center`}>
           <li className={`text-lg hover:underline ${open && 'hover:bg-white'  } hover:text-[#440770]`}>
           <a href="#">Home</a>
           </li>
@@ -39,7 +39,7 @@ export default function Navbar(){
           </li>
       </ul>
       </nav>
-      <div className="w-full md:w-1/4 flex gap-4 justify-center items-center">
+      <div className="w-full lg:w-1/4 flex gap-4 justify-center items-center">
           <button className={`px-4 py-2 ${open ? 'bg-white text-[#440476]' :'bg-[#440476] text-white'} transition-all hover:font-bold rounded-md cursor-pointer`}>
           <NavLink to="/register">Sign Up</NavLink>
 </button>

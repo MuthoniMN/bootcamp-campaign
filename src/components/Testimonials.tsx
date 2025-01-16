@@ -45,18 +45,20 @@ export default function Testimonials(){
   useEffect(() => {
     const interval = setInterval(() => {
       next();
-    }, 5000);
+    }, 2000);
+
+    console.log(current)
 
     // Cleanup the interval on component unmount
     return () => clearInterval(interval);
-  }, []);
+  }, [current]);
 
   return (
     <section className="testimonials py-12 text-white flex flex-col items-center gap-16" id="testimonials">
       <h2 className="text-3xl text-[32px] font-bold">Intern Testimonials</h2>
       <section className="flex justify-between items-center gap-4">
         <p> <IoIosArrowBack className="text-5xl" onClick={() => prev()} /> </p>
-          <div className="relative max-w-[450px] h-[200px] overflow-hidden">
+          <div className="relative w-[300px] md:w-[450px] h-[200px] overflow-hidden">
           <div
             className="absolute w-full h-full flex transition-transform duration-700 ease-in-out space-x-6"
             style={{

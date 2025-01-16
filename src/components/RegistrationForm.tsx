@@ -4,7 +4,7 @@ import PhoneInput from 'react-phone-number-input'
 import { fetchData } from '../utils/fetch';
 import { User, Track, Cohort, Errors } from '../types/';
 import { validateObject } from '../utils/validate';
-
+import { NavLink } from "react-router";
 
 export default function RegistrationForm(){
   const [data, setData] = useState<User>({} as User);
@@ -57,6 +57,7 @@ export default function RegistrationForm(){
   }
 
   return (
+    <>
     <form onSubmit={handleSubmit} className="py-6 px-2 space-y-4 h-fit lg:my-8">
       <div className="flex gap-4 items-center flex-col lg:flex-row">
         <div className="w-full lg:w-1/2 flex flex-col gap-2">
@@ -127,5 +128,7 @@ export default function RegistrationForm(){
 
       <input type="submit" value="Register" className="w-full rounded-xl font-bold bg-[#330066] py-2 text-white my-16" />
     </form>
+      <NavLink to="/" className="text-xl mt-6 text-[#330066] underline hover:font-bold cursor-pointer">Back To Home</NavLink>
+    </>
   );
 }
