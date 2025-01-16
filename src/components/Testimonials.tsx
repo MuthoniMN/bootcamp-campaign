@@ -52,7 +52,7 @@ export default function Testimonials(){
   }, []);
 
   return (
-    <section className="testimonials py-12 text-white flex flex-col items-center gap-16">
+    <section className="testimonials py-12 text-white flex flex-col items-center gap-16" id="testimonials">
       <h2 className="text-3xl text-[32px] font-bold">Intern Testimonials</h2>
       <section className="flex justify-between items-center gap-4">
         <p> <IoIosArrowBack className="text-5xl" onClick={() => prev()} /> </p>

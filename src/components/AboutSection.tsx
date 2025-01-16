@@ -6,7 +6,7 @@ import { GoTrophy } from "react-icons/go";
 
 export default function AboutSection(){
   return (
-    <section className="flex flex-col md:flex-row py-6 items-center">
+    <section className="flex flex-col md:flex-row py-6 items-center" id="about">
       <div className="w-full md:w-1/2 flex items-center justify-center">
         <img src="/about-img.png" alt="Rhedge Studio Interns" className="max-w-[400px]" />
       </div>

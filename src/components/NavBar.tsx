@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { RiMenuFill, RiMenu4Line } from "react-icons/ri";
 import { IoMdCloseCircle } from "react-icons/io";
+import { NavLink } from "react-router";
 
 export default function Navbar(){
   const [open, setOpen] = useState(false);
@@ -24,7 +25,7 @@ export default function Navbar(){
           <a href="#about">About</a>
           </li>
           <li className={`text-lg hover:underline ${open && 'hover:bg-white'  } hover:text-[#440770]`}>
-          <a href="/register">Apply</a>
+          <NavLink to="/register">Apply</NavLink>
           </li>
 
           <li className={`text-lg hover:underline ${open && 'hover:bg-white'  } hover:text-[#440770]`}>
@@ -39,7 +40,9 @@ export default function Navbar(){
       </ul>
       </nav>
       <div className="w-full md:w-1/4 flex gap-4 justify-center items-center">
-          <button className={`px-4 py-2 ${open ? 'bg-white text-[#440476]' :'bg-[#440476] text-white'} transition-all hover:font-bold rounded-md`}>Sign Up</button>
+          <button className={`px-4 py-2 ${open ? 'bg-white text-[#440476]' :'bg-[#440476] text-white'} transition-all hover:font-bold rounded-md`}>
+          <NavLink to="/register">Sign Up</NavLink>
+</button>
           <button className={`px-4 py-2 border-2 ${open ? 'text-white border-white' : 'border-[#440476] text-[#410372]'} transition-all hover:font-bold rounded-md`}>Log In</button>
         </div>
       </div>

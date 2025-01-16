@@ -31,7 +31,7 @@ export default function FAQ(){
   }
 
   return (
-    <section className="py-12 text-center flex flex-col items-center justify-center">
+    <section className="py-12 text-center flex flex-col items-center justify-center" id="faq">
       <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
       <div className="space-y-4 w-full max-w-[720px] px-4 mt-8 text-left">
         { data.map((d, id) => (
