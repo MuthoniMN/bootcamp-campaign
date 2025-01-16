@@ -56,7 +56,7 @@ export default function Testimonials(){
       <h2 className="text-3xl text-[32px] font-bold">Intern Testimonials</h2>
       <section className="flex justify-between items-center gap-4">
         <p> <IoIosArrowBack className="text-5xl" onClick={() => prev()} /> </p>
-          <div className="relative w-[450px] h-[200px] overflow-hidden">
+          <div className="relative max-w-[450px] h-[200px] overflow-hidden">
           <div
             className="absolute w-full h-full flex transition-transform duration-700 ease-in-out space-x-6"
             style={{
