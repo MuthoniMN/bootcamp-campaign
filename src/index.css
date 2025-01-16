@@ -89,3 +89,10 @@ body {
 .slider {
     animation: slideAnimation 9s infinite;
 }
+
+.testimonials {
+  background: linear-gradient(90deg, rgba(65, 3, 114, 0.4) 0%, rgba(65, 3, 114, 0.4) 100%), url('/testimonials-bg.png') repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 500px;
+}
