@@ -3,6 +3,7 @@ import HeroSection from "../components/HeroSection";
 import Companies from "../components/Companies";
 import AboutSection from "../components/AboutSection";
 import Tracks from "../components/Tracks";
+import Benefits from "../components/Benefits";
 
 export default function LandingPage(){
   return (
@@ -12,6 +13,7 @@ export default function LandingPage(){
       <Companies />
       <AboutSection />
       <Tracks />
+      <Benefits />
     </main>
   )
 }
